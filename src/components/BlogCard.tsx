@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent, CardTitle } from "../components/ui/card";
+
 interface BlogCardProps {
   post: {
     id: any;
     title: any;
-    description: any
+    description: any;
     date: any;
     imageUrl: any;
   };
@@ -22,6 +22,8 @@ export default function BlogCard({ post, isDarkBackground }: BlogCardProps) {
     >
       <img
         src={post.imageUrl}
+        width={300}
+        height={300}
         alt={post.title}
         className="w-full h-48 object-cover rounded-t-lg "
       />

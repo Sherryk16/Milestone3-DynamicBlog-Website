@@ -7,7 +7,7 @@ export default function Mega() {
       id:1,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of Englands bold and dynamic playing style, often referred to as Bazball',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -16,7 +16,7 @@ export default function Mega() {
       id:2,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -25,7 +25,7 @@ export default function Mega() {
       id:3,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -34,7 +34,7 @@ export default function Mega() {
       id:4,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -43,7 +43,7 @@ export default function Mega() {
       id:5,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -52,7 +52,7 @@ export default function Mega() {
       id:6,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -61,7 +61,7 @@ export default function Mega() {
       id:7,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -79,7 +79,7 @@ export default function Mega() {
       id:9,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -88,7 +88,7 @@ export default function Mega() {
       id:10,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -97,7 +97,7 @@ export default function Mega() {
       id:11,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -106,7 +106,7 @@ export default function Mega() {
       id:12,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -115,7 +115,7 @@ export default function Mega() {
       id:13,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -124,7 +124,7 @@ export default function Mega() {
       id:14,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100
@@ -133,7 +133,7 @@ export default function Mega() {
       id:15,
      title: 'First Blog',
      description:'After much anticipation and excitement, the riveting series between India and England has finally concluded, leaving cricket fans around the world buzzing with discussion and analysis.With India emerging triumphant with a commanding 4-1 victory, the series has not only showcased the prowess of the Indian team but also sparked debates about the future of England’s bold and dynamic playing style, often referred to as Bazball.',
-     imageUrl: 'images/blog1.png',
+     imageUrl: '/blog1.png',
      author: 'John Doe',
      date: '2022-01-01',
      comments: 100

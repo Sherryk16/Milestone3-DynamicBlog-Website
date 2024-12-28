@@ -4,19 +4,19 @@ import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 
 interface Comment {
-  id: string; // Ensure consistent type for `id`
+  id: string;
   text: string;
   author: string;
 }
 
 interface CommentSectionProps {
-  postID: any; // Define the expected type for `postID`
+  postID: number; // Changed to `string` for type safety
 }
 
 export default function CommentSection({ postID }: CommentSectionProps) {
   const [comments, setComments] = useState<Comment[]>([]);
-  const [newCommentText, setNewComment] = useState('');
-  const [authorName, setAuthorName] = useState('');
+  const [newCommentText, setNewComment] = useState<string>('');
+  const [authorName, setAuthorName] = useState<string>('');
   const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
 
   // Add a comment
@@ -60,7 +60,7 @@ export default function CommentSection({ postID }: CommentSectionProps) {
 
   return (
     <div className="mt-8">
-      <h2 className="text-2xl font-semibold">Comments</h2>
+      <h2 className="text-2xl font-semibold">Comments for Post {postID}</h2>
 
       {/* Comments List */}
       <div className="mt-4 space-y-4">

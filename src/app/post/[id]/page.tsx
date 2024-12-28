@@ -143,13 +143,22 @@ const postsData=[
    comments: 100
   },]
 
-export default function Post({ params }: { params: Promise<{ id: any }> }) {
-  const { id } = React.use(params); // Unwrap params with React.use()
+interface PostProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
 
-  console.log('ID:', id);
+export default function Post({ params }: PostProps) {
+  // Unwrap params using React.use()
+  const { id } = React.use(params);
 
-  // Convert both `id` and `post.id` to numbers for comparison
-  const post = postsData.find((p) => p.id === Number(id));
+  // Convert ID to a number
+  const numericId = Number(id);
+  console.log('ID:', numericId);
+
+  // Find the post matching the given ID
+  const post = postsData.find((p) => p.id === numericId);
   console.log('Found Post:', post);
 
   const renderParagraphs = (description: string) => {
@@ -161,23 +170,23 @@ export default function Post({ params }: { params: Promise<{ id: any }> }) {
   };
 
   if (!post) {
-    return <div>Post not found</div>; 
+    return <div>Post not found</div>;
   }
 
   return (
-    <div className='max-w-3xl mx-auto p-5'>
+    <div className="max-w-3xl mx-auto p-5">
       <h1 className="font-bold md:text-4xl text-3xl text-center mb-5">{post.title}</h1>
       {post.imageUrl && (
         <Image
-          className=" h-auto rounded-md"
+          className="h-auto rounded-md"
           src={post.imageUrl}
-          width={1000} // Provide a proper width and height
+          width={1000}
           height={500}
           alt="Post Image"
         />
       )}
-      <div className=' mt-6 text-lg text-slate-700'>
-      {post.description && renderParagraphs(post.description)}
+      <div className="mt-6 text-lg text-slate-700">
+        {post.description && renderParagraphs(post.description)}
       </div>
       <CommentSection postID={post.id} />
       <AuthorCard />
