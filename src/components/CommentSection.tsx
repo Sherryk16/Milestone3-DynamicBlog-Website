@@ -1,103 +1,114 @@
-'use client'
-import React , {useState}from 'react';
-import {Card,CardContent} from '../components/ui/card'
+'use client';
+import React, { useState } from 'react';
+import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
-//import { Button } from './ui/button';
 
 interface Comment {
-  id: any;
+  id: string; // Ensure consistent type for `id`
   text: string;
   author: string;
 }
-interface CommentSectionProps{
-  postID:any;
 
+interface CommentSectionProps {
+  postID: any; // Define the expected type for `postID`
 }
-export default function CommentSection({postID}:CommentSectionProps){
+
+export default function CommentSection({ postID }: CommentSectionProps) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newCommentText, setNewComment] = useState('');
-  const [authorName, setAuthorName] =useState('');
-  const [editingCommentId ,setEditingCommentId]= useState <string | null> (null);
+  const [authorName, setAuthorName] = useState('');
+  const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
 
+  // Add a comment
   const handleAddComment = () => {
-    if (newCommentText.trim() && authorName.trim()){
-      const newCommentObj : Comment ={
-        id: new Date().toISOString(),
+    if (newCommentText.trim() && authorName.trim()) {
+      const newComment: Comment = {
+        id: new Date().toISOString(), // Generate unique ID
         text: newCommentText,
-        author: authorName,   
+        author: authorName,
       };
-      setComments([...comments, newCommentObj]);
-       setNewComment('');
-       setAuthorName('');  
+      setComments([...comments, newComment]);
+      setNewComment('');
+      setAuthorName('');
     }
   };
-  const handlEditComment = (commentID: string) => {
-   const commentToEdit = comments.find((comment)=> comment.id === commentID);
-    if(commentToEdit){
+
+  // Edit a comment
+  const handleEditComment = (commentID: string) => {
+    const commentToEdit = comments.find((comment) => comment.id === commentID);
+    if (commentToEdit) {
       setAuthorName(commentToEdit.author);
       setNewComment(commentToEdit.text);
       setEditingCommentId(commentID);
     }
   };
-  const handleSavedEditedComment =()=>{
+
+  // Save the edited comment
+  const handleSaveEditedComment = () => {
     if (newCommentText.trim() && authorName.trim() && editingCommentId) {
-      const updatedComments = comments.map((comments) =>
-        comments.id === editingCommentId? {...comments, text: newCommentText, author: authorName } : comments
+      const updatedComments = comments.map((comment) =>
+        comment.id === editingCommentId
+          ? { ...comment, text: newCommentText, author: authorName }
+          : comment
       );
       setComments(updatedComments);
       setAuthorName('');
       setNewComment('');
-      setEditingCommentId(null); 
+      setEditingCommentId(null);
     }
-  }
-  return(
-    <div className='mt-8'>
-      <h2 className='text-2xl font-semibold'>Comments</h2>
-      <div className='mt-4 space-y-4 '>
-        {comments.length > 0 ?(
-          comments.map((comment)=>(
+  };
+
+  return (
+    <div className="mt-8">
+      <h2 className="text-2xl font-semibold">Comments</h2>
+
+      {/* Comments List */}
+      <div className="mt-4 space-y-4">
+        {comments.length > 0 ? (
+          comments.map((comment) => (
             <Card key={comment.id}>
-              <CardContent className='p-4'>
-                <div className='font-semibold'>{comment.author}</div>
+              <CardContent className="p-4">
+                <div className="font-semibold">{comment.author}</div>
                 <div>{comment.text}</div>
-                <button onClick={() => handlEditComment(comment.id)}
-                  className='mt-2  bg-black text-white rounded-md px-3  font-semibold hover:scale-105 transition-all'>
+                <button
+                  onClick={() => handleEditComment(comment.id)}
+                  className="mt-2 bg-black text-white rounded-md px-3 font-semibold hover:scale-105 transition-all"
+                >
                   Edit
-                  </button>
+                </button>
               </CardContent>
             </Card>
           ))
-        ):(
-          <p className='text-slate-400 text-center'>No comments yet.</p>
+        ) : (
+          <p className="text-slate-400 text-center">No comments yet.</p>
         )}
-
-      </div>
-      <div className='mt-6'>
-        <Input
-        type='text'
-        value={authorName}
-        onChange={(e)=> setAuthorName(e.target.value) }
-        placeholder='Your Name'
-        className='w-full mb-2'/>
-
-        <Input
-        type='text'
-        value={newCommentText}
-        onChange={(e)=> setNewComment(e.target.value) }
-        placeholder='Your Comment'
-        className='w-full mb-2'/>
-      
-      <button onClick={editingCommentId ? handleSavedEditedComment : handleAddComment}
-      className='mt-4 bg-black text-white rounded-md px-3 py-3 font-semibold hover:scale-105 transition-all'>
-        {editingCommentId? 'Save' : 'Add Comment'}
-        
-
-      </button>
-
       </div>
 
+      {/* Comment Form */}
+      <div className="mt-6">
+        <Input
+          type="text"
+          value={authorName}
+          onChange={(e) => setAuthorName(e.target.value)}
+          placeholder="Your Name"
+          className="w-full mb-2"
+        />
 
+        <Input
+          type="text"
+          value={newCommentText}
+          onChange={(e) => setNewComment(e.target.value)}
+          placeholder="Your Comment"
+          className="w-full mb-2"
+        />
 
+        <button
+          onClick={editingCommentId ? handleSaveEditedComment : handleAddComment}
+          className="mt-4 bg-black text-white rounded-md px-3 py-3 font-semibold hover:scale-105 transition-all"
+        >
+          {editingCommentId ? 'Save' : 'Add Comment'}
+        </button>
+      </div>
     </div>
-  )
+  );
 }
