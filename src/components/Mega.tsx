@@ -148,7 +148,7 @@ export default function Mega() {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>{post.map((post, index)=>(
           <div className='fade-in' key={post.id} >
             <div className='blog-card' >
-              <BlogCard post={post} isDarkBackground={index % 2 === 0}/>
+              <BlogCard post={{ ...post, id: post.id.toString() }} isDarkBackground={index % 2 === 0}/>
             </div>
           </div>
         ))}</div>

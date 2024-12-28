@@ -1,14 +1,15 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardTitle } from "../components/ui/card";
 
 interface BlogCardProps {
   post: {
-    id: any;
-    title: any;
-    description: any;
-    date: any;
-    imageUrl: any;
+    id: string; // Use string type for id instead of `any`
+    title: string;
+    description: string;
+    date: string;
+    imageUrl: string; // Use string type for imageUrl instead of `any`
   };
   isDarkBackground: boolean;
 }
@@ -17,19 +18,19 @@ export default function BlogCard({ post, isDarkBackground }: BlogCardProps) {
   return (
     <Card
       className={`p-4 ${
-        isDarkBackground ? "bg-slate-800 text-white " : "text-slate-800"
-      }rounded-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105`}
+        isDarkBackground ? "bg-slate-800 text-white" : "text-slate-800"
+      } rounded-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105`}
     >
-      <img
-        src={post.imageUrl}
-        width={300}
-        height={300}
+      {/* Ensure the image URL starts with "/" if it's from the public directory */}
+      <Image
+        src={post.imageUrl.startsWith("/") ? post.imageUrl : `/${post.imageUrl}`}
         alt={post.title}
-        className="w-full h-48 object-cover rounded-t-lg "
+        width={400}
+        height={200}
+        className="w-full h-48 object-cover rounded-t-lg"
+        priority
       />
-      <CardTitle className="text-xl font-normal mt-4 text-center">
-        {post.title}
-      </CardTitle>
+      <CardTitle className="text-xl font-normal mt-4 text-center">{post.title}</CardTitle>
       <br />
       <CardContent className="text-center">
         <p>{post.description}</p>
@@ -45,10 +46,8 @@ export default function BlogCard({ post, isDarkBackground }: BlogCardProps) {
 
         <Link
           href={`/post/${post.id}`}
-          className={`w-full px-6 text-white bg-blue-500  rounded hover:scale-105 flex justify-center ${
-            isDarkBackground
-              ? "bg-black hover:bg-red-500"
-              : "bg-black hover:bg-red-500"
+          className={`w-full px-6 text-white bg-blue-500 rounded hover:scale-105 flex justify-center ${
+            isDarkBackground ? "bg-black hover:bg-red-500" : "bg-black hover:bg-red-500"
           }`}
         >
           Read More
